@@ -1,0 +1,30 @@
+doctype html
+html(lang="en")
+    head
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        block extrameta
+        block title
+            title Full Stack Web Development
+        block stylesheets
+            link(href='assets/css/style.css', rel='stylesheet')
+    body
+        div.header
+            div.header-container
+                a(href='/')
+                    div.logo-container
+                        div.logo-mat
+                            div.logo F
+                        div.logo-title Full Stack Web
+                div.links
+                    div.link.inverse
+                        a(href='/donate') Donate
+        div.page_space.page_container
+            div.page
+                div.page-body
+                    div.page-hero
+                        div.page-hero__left
+                            block briefintro
+                        div.page-hero__right
+                            block level
+                div.page-body
+                    block content
