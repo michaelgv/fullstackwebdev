@@ -7,6 +7,7 @@ const port      = process.env.PORT || 9002;
 const path      = require('path');
 const jade      = require('jade');
 const fs        = require('fs');
+const chalk     = require('chalk');
 
 /**
  * Set static links
@@ -19,7 +20,7 @@ app.use('/assets', express.static(path.join(__dirname, '/build/assets')));
 app.set('view engine', 'jade');
 
 app.get('/', (req, res) => {
-    res.render('home')
+    res.render('index')
 })
 
 app.get('/:pagepath', (req, res) => {
@@ -27,8 +28,7 @@ app.get('/:pagepath', (req, res) => {
     req.url = req.url.replace(/\.html/g, '');
     var currentPath = path.join(__dirname, '/views/', req.url + '.jade');
     if(fs.existsSync(currentPath)) {
-    //    var src = jade.compileFile(currentPath);
-    //    res.send(src);
+        console.log(`${chalk.dim('HTTP')} ${chalk.green.bold('Rendered ' + currentPath)}`);
         res.render(req.url.replace(/\//g, ''));
     }
     else {
@@ -36,4 +36,6 @@ app.get('/:pagepath', (req, res) => {
     }
 })
 
-app.listen(port);
+app.listen(port, () => {
+    console.log(`${chalk.dim('HTTP')} ${chalk.green.bold('Listening on *:'+port)}`);
+});

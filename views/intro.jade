@@ -1,0 +1,79 @@
+extends ./layout.jade
+
+block extrameta
+    meta(name='description', content='Full Stack Web Development course made available online for free')
+
+block briefintro
+    h2 Let's get started
+    p.lead You'll need to install a few bits of software to help us along our journey.
+
+block level
+    div.level
+        span.level-difficulty BEGINNER
+
+block content
+    div.content-space
+        blockquote
+            h4.title Already have an IDE and NodeJS?
+            :markdown
+                You can [safely move onto the configuration part](configure_ide.html), but feel free to continue if you need a refresher.
+        h3 Prerequisites
+        
+        :markdown
+            In order to complete this section, you'll need a computer with the following minimum specifications, and any operating system.
+
+            **RAM:** 2 GB or greater
+
+            **Hard Drive:** 5 GB or greater
+        
+        h2 What will we need and why?
+
+        :markdown
+            We'll need a few pieces of software, first we'll want a good text editor or IDE, for this we'll use [sublime text](https://sublimetext.com/) because it's small, flexible, and works pretty universally without issue. There are other editors, such as [Visual Studio Code](https://code.visualstudio.com/) and [Atom](https://atom.io/).
+
+            We will also need to install [NodeJS](https://nodejs.org/), as this will be our primary tool we'll use. This course will assume you have basic Javascript knowledge and are familiar with ES2015 (ES6) concepts, and are confident with the command line.
+
+        h2 Installing Sublime Text
+        
+        :markdown
+            Installing Sublime Text is a quick and easy task, let's navigate to [their website, https://sublimetext.com/](https://sublimetext.com/), and click download.
+
+            Depending on your operating system, you can drag into Applications on Mac, or run the installer on Windows. Linux users can also ```apt-get install``` sublime text.
+
+            Assuming you've installed Sublime Text, you should be able to open it and see a window that looks like this:
+
+            ![preview image of sublime text](https://i.imgur.com/Fmtq0nK.png)
+
+            Let's now install NodeJS!
+
+        h2 Installing NodeJS
+
+        :markdown
+            You can install NodeJS and NPM via a bunch of different ways, here's how
+
+            ### Linux
+            
+            You can run the following commands to update and install NodeJS
+
+            ```shell
+                sudo apt-get update 
+                sudo apt-get install nodejs -y
+            ```
+
+            ### Mac
+
+            You can download the dmg file from NodeJS website (https://nodejs.org/), or if you have [homebrew](https://brew.org) installed, you can run:
+
+            ```shell
+                brew install nodejs
+            ```
+
+            ### Windows
+
+            In order to install on Windows, visit the [NodeJS website](https://nodejs.org/) and install the binaries supplied.
+
+        blockquote
+            h4.title Why do we need all of this?
+            p We need all of this to let us develop real applications that we can publish for everyone to see and use. If you have never done development before, I urge you stop here and learn basic Javascript principals, and what full stack web development entails!
+
+        a(href='/configure_ide.html', class='button-go') Let's configure your IDE
