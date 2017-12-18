@@ -24,6 +24,7 @@ app.get('/', (req, res) => {
 
 app.get('/:pagepath', (req, res) => {
     console.log(req.url);
+    req.url = req.url.replace(/\.html/g, '');
     var currentPath = path.join(__dirname, '/views/', req.url + '.jade');
     if(fs.existsSync(currentPath)) {
     //    var src = jade.compileFile(currentPath);
