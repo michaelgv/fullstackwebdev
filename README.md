@@ -2,6 +2,8 @@
 
 This is a work in progress guide to help teach you full stack web development, from start to finish. Feel to contribute. We use Jade templating engine, which compiles into static HTML.
 
+[Live Site](https://fullstackwebdev.netlify.com/)
+
 ### Adding Pages
 
 Just create a new file in the views folder, ie: ```example.jade```
